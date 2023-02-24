@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 import { Link } from "react-router-dom";
 
 export const SideMenuWrapper = styled.div`
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
@@ -87,7 +87,9 @@ export const Description = styled.p`
   margin: 0 0 0.26vw 0;
 `;
 
-export const DescriptionSpan = styled.span`
+export const DescriptionSpan = styled.button`
+  background: none;
+  position: relative;
   align-self: center;
   font-family: "Manrope";
   font-style: normal;
@@ -96,8 +98,20 @@ export const DescriptionSpan = styled.span`
   line-height: 1.188rem;
   white-space: pre-wrap;
   color: #2a2a2a;
-  border-bottom: 3px dotted #fd2016;
   margin: 0.5rem 0 0 0;
+  &::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    border-bottom: 3px dotted #fd2016;
+  }
+  &:hover::after {
+    width: 50%;
+    transition: width 0.2s linear;
+  }
 `;
 
 export const PriceCalculatorBlock = styled.div`

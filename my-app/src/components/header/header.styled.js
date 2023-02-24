@@ -1,12 +1,16 @@
+import { keyframes } from "@emotion/react";
 import styled from "@emotion/styled";
 import { Link } from "react-router-dom";
 import { ReactComponent as MenuIcon } from "../../assets/MenuIcon.svg";
 
 export const Container = styled.div`
-  position: relative;
+  position: sticky;
+  top: 0;
   max-width: 85.573vw;
   margin: 0 auto;
   padding: 0 0.833vw;
+  overflow-x: hidden;
+  background: #ffffff;
   @media (max-width: 992px) {
     max-width: 53rem;
     padding: 0 0.5rem;
@@ -14,15 +18,16 @@ export const Container = styled.div`
 `;
 
 export const MainWrapper = styled.div`
+  z-index: 2;
   display: flex;
   flex-direction: column;
   margin: 1.563vw auto 1.146vw auto;
+
   @media (max-width: 992px) {
     margin: 0.938rem auto 0.688rem auto;
   }
   @media (max-width: 320px) {
-    position: absolute;
-    z-index: 2;
+    position: fixed;
   }
 `;
 
@@ -162,7 +167,8 @@ export const Description = styled.p`
 `;
 
 export const Span = styled.span`
-  border-bottom: 3px dotted #fd2016;
+  background: none;
+  position: relative;
   font-family: "Manrope";
   font-style: normal;
   font-weight: 700;
@@ -170,6 +176,19 @@ export const Span = styled.span`
   line-height: 0.781vw;
   white-space: pre-wrap;
   color: #2a2a2a;
+  &::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    border-bottom: 3px dotted #fd2016;
+  }
+  &:hover::after {
+    width: 50%;
+    transition: width 0.2s linear;
+  }
   @media (max-width: 992px) {
     font-size: 0.356rem;
     line-height: 0.481rem;

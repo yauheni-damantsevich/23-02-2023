@@ -42,6 +42,7 @@ import Viber from "../../assets/Viber.svg";
 import SpoilerIcon from "../../assets/Spoiler.svg";
 import CallIcon from "../../assets/Call.svg";
 import { SideMenu } from "../../components/sideMenu/sideMenu";
+import { Popup } from "../../components/popup/popup";
 
 export const Header = () => {
   const mainDescriptionValue =
@@ -55,6 +56,7 @@ export const Header = () => {
   const CallNumberValue = "+7 (925) 103 33 30";
   const CallValue = "Заказать звонок";
   const [open, setOpen] = React.useState(false);
+  const [openPopup, setOpenPopup] = React.useState(false);
   return (
     <Container>
       <MainWrapper>
@@ -141,7 +143,7 @@ export const Header = () => {
                 <ContactIcon src={SpoilerIcon} alt="Spoiler Icon" />
               </ContactItem>
               <ContactItem>
-                <HeaderButton>
+                <HeaderButton onClick={() => setOpenPopup(!open)}>
                   <Span
                     css={css`
                       @media (max-width: 320px) {
@@ -204,6 +206,7 @@ export const Header = () => {
         </MainBottomWrapper>
       </MainWrapper>
       {open && <SideMenu />}
+      {openPopup && <Popup state={setOpenPopup} />}
     </Container>
   );
 };

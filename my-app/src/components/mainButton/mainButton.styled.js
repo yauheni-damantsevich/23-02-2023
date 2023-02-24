@@ -57,4 +57,9 @@ export const ButtonIcon = styled.img`
   @media (max-width: 320px) {
     display: none;
   }
+  &:hover {
+    cursor: pointer;
+    transform: rotate(45deg);
+    transition: transform 0.2s linear;
+  }
 `;
