@@ -12,6 +12,10 @@ export const Button = styled.button`
     gap: 0.438rem;
     border-radius: 16.125rem;
   }
+  @media (max-width: 320px) {
+    justify-content: center;
+    min-height: 3.75rem;
+  }
 `;
 
 export const ButtonWrapper = styled.div`
@@ -48,5 +52,56 @@ export const ButtonIcon = styled.img`
   padding: 0.729vw;
   @media (max-width: 992px) {
     padding: 0.452rem;
+  }
+  @media (max-width: 320px) {
+    display: none;
+  }
+`;
+
+export const SecondarySpan = styled.span`
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 0.833vw;
+  line-height: 1.25vw;
+  text-decoration: none;
+  color: #ffffff;
+  white-space: pre-wrap;
+  align-self: center;
+  display: none;
+  &:visited {
+    color: #ffffff;
+  }
+  @media (max-width: 992px) {
+    font-size: 0.516rem;
+    line-height: 0.775rem;
+  }
+  @media (max-width: 320px) {
+    display: inline;
+    color: #20c863;
+  }
+`;
+
+export const PrimarySpan = styled.span`
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 0.833vw;
+  line-height: 1.25vw;
+  text-decoration: none;
+  color: #ffffff;
+  white-space: pre-wrap;
+  align-self: center;
+  &:visited {
+    color: #ffffff;
+  }
+
+  @media (max-width: 992px) {
+    font-size: 0.516rem;
+    line-height: 0.775rem;
+  }
+
+  @media (max-width: 320px) {
+    display: none;
   }
 `;

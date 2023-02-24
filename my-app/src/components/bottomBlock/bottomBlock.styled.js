@@ -4,6 +4,7 @@ export const BottomBlockWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  margin: 0.938rem 1.438rem;
 `;
 
 export const Block = styled.div`
@@ -16,6 +17,9 @@ export const Block = styled.div`
   @media (max-width: 992px) {
     gap: 0.711rem;
     margin: 0 0 0.711rem 0;
+  }
+  @media (max-width: 320px) {
+    max-width: 8.938rem;
   }
 `;
 
@@ -32,6 +36,9 @@ export const BottomBlockTitle = styled.h2`
     font-size: 0.549rem;
     line-height: 0.872rem;
   }
+  @media (max-width: 320px) {
+    color: #282828;
+  }
 `;
 
 export const BottomBlockTitleSpan = styled.span`
@@ -45,6 +52,9 @@ export const BottomBlockTitleSpan = styled.span`
     font-size: 0.549rem;
     line-height: 0.872rem;
   }
+  @media (max-width: 320px) {
+    color: #282828;
+  }
 `;
 
 export const VerticalRule = styled.hr`
@@ -54,5 +64,8 @@ export const VerticalRule = styled.hr`
   border: none;
   @media (max-width: 992px) {
     height: 4.941vw;
+  }
+  @media (max-width: 320px) {
+    display: none;
   }
 `;

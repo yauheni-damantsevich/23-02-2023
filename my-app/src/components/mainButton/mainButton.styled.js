@@ -11,6 +11,10 @@ export const Button = styled.button`
     gap: 0.452rem;
     border-radius: 16.125rem;
   }
+  @media (max-width: 320px) {
+    justify-content: center;
+    min-height: 3.75rem;
+  }
 `;
 
 export const ButtonWrapper = styled.div`
@@ -49,5 +53,8 @@ export const ButtonIcon = styled.img`
     max-width: 0.711rem;
     max-height: 0.711rem;
     padding: 0.438rem;
+  }
+  @media (max-width: 320px) {
+    display: none;
   }
 `;

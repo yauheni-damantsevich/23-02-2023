@@ -1,7 +1,9 @@
 import styled from "@emotion/styled";
 import { Link } from "react-router-dom";
+import { ReactComponent as MenuIcon } from "../../assets/MenuIcon.svg";
 
 export const Container = styled.div`
+  position: relative;
   max-width: 85.573vw;
   margin: 0 auto;
   padding: 0 0.833vw;
@@ -18,10 +20,13 @@ export const MainWrapper = styled.div`
   @media (max-width: 992px) {
     margin: 0.938rem auto 0.688rem auto;
   }
+  @media (max-width: 320px) {
+    position: absolute;
+    z-index: 2;
+  }
 `;
 
 export const MainTopWrapper = styled.div`
-  position: relative;
   display: flex;
   gap: 2.969vw;
   margin: 0 0 2.292vw 0;
@@ -39,6 +44,13 @@ export const MainTopWrapper = styled.div`
     flex-wrap: wrap;
     &::after {
       top: calc(100% + 0.706rem);
+    }
+  }
+  @media (max-width: 320px) {
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    &::after {
+      display: none;
     }
   }
 `;
@@ -61,6 +73,10 @@ export const Icon = styled.img`
     max-width: 1.125rem;
     max-height: 1.125rem;
   }
+  @media (max-width: 320px) {
+    max-width: 5.75rem;
+    max-height: 1.375rem;
+  }
 `;
 
 export const DescriptionBlock = styled.p`
@@ -76,6 +92,9 @@ export const DescriptionBlock = styled.p`
     font-size: 0.356rem;
     line-height: 0.625rem;
   }
+  @media (max-width: 320px) {
+    display: none;
+  }
 `;
 
 export const PriceCalculatorBlock = styled.div`
@@ -83,6 +102,9 @@ export const PriceCalculatorBlock = styled.div`
   gap: 0.521vw;
   @media (max-width: 992px) {
     gap: 0.313rem;
+  }
+  @media (max-width: 320px) {
+    display: none;
   }
 `;
 
@@ -92,6 +114,9 @@ export const AddressBlock = styled.div`
   @media (max-width: 992px) {
     gap: 0.313rem;
   }
+  @media (max-width: 320px) {
+    display: none;
+  }
 `;
 
 export const MapBlock = styled.div`
@@ -100,6 +125,9 @@ export const MapBlock = styled.div`
   @media (max-width: 992px) {
     gap: 0.313rem;
   }
+  @media (max-width: 320px) {
+    display: none;
+  }
 `;
 
 export const QuestionBlock = styled.div`
@@ -107,6 +135,9 @@ export const QuestionBlock = styled.div`
   gap: 0.938vw;
   @media (max-width: 992px) {
     gap: 0.563rem;
+  }
+  @media (max-width: 320px) {
+    display: none;
   }
 `;
 
@@ -119,9 +150,14 @@ export const Description = styled.p`
   line-height: 0.781vw;
   white-space: pre-wrap;
   color: #2a2a2a;
+  margin: 0 0 0.26vw 0;
   @media (max-width: 992px) {
     font-size: 0.356rem;
     line-height: 0.481rem;
+    margin: 0 0 0.313rem 0;
+  }
+  @media (max-width: 320px) {
+    color: #ffffff;
   }
 `;
 
@@ -137,6 +173,9 @@ export const Span = styled.span`
   @media (max-width: 992px) {
     font-size: 0.356rem;
     line-height: 0.481rem;
+  }
+  @media (max-width: 320px) {
+    color: #ffffff;
   }
 `;
 
@@ -191,6 +230,9 @@ export const DescriptionNumber = styled.p`
     font-size: 0.625rem;
     line-height: 0.313rem;
   }
+  @media (max-width: 320px) {
+    color: #ffffff;
+  }
 `;
 
 export const ContactIcon = styled.img`
@@ -200,7 +242,11 @@ export const ContactIcon = styled.img`
   }
 `;
 
-export const MainBottomWrapper = styled.div``;
+export const MainBottomWrapper = styled.div`
+  @media (max-width: 320px) {
+    display: none;
+  }
+`;
 
 export const MenuButtonList = styled.ul`
   display: flex;
@@ -225,4 +271,18 @@ export const MenuButtonLink = styled(Link)`
     font-size: 0.388rem;
     line-height: 0.519rem;
   }
+`;
+
+export const MenuButton = styled.button`
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: none;
+  @media (max-width: 320px) {
+    display: block;
+  }
+`;
+
+export const MenuButtonIcon = styled(MenuIcon)`
+  filter: invert(100%) brightness(200%);
 `;

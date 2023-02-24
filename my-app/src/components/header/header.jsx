@@ -29,6 +29,8 @@ import {
   MenuButtonList,
   MenuButtonItem,
   MenuButtonLink,
+  MenuButton,
+  MenuButtonIcon,
 } from "./header.styled";
 import LogoIcon from "../../assets/Логотип.svg";
 import MapIcon from "../../assets/Карта.svg";
@@ -39,6 +41,7 @@ import Telegram from "../../assets/Telegram.svg";
 import Viber from "../../assets/Viber.svg";
 import SpoilerIcon from "../../assets/Spoiler.svg";
 import CallIcon from "../../assets/Call.svg";
+import { SideMenu } from "../../components/sideMenu/sideMenu";
 
 export const Header = () => {
   const mainDescriptionValue =
@@ -51,6 +54,7 @@ export const Header = () => {
   const CallDescriptionValue = "Звоните Пн-Сб 10:00 - 21:00 ";
   const CallNumberValue = "+7 (925) 103 33 30";
   const CallValue = "Заказать звонок";
+  const [open, setOpen] = React.useState(false);
   return (
     <Container>
       <MainWrapper>
@@ -114,15 +118,37 @@ export const Header = () => {
           <ContactBlock>
             <ContactList>
               <ContactItem>
-                <Description>{CallDescriptionValue}</Description>
+                <Description
+                  css={css`
+                    @media (max-width: 320px) {
+                      color: ${open ? "#000000" : null};
+                    } ;
+                  `}
+                >
+                  {CallDescriptionValue}
+                </Description>
               </ContactItem>
               <ContactItem>
-                <DescriptionNumber>{CallNumberValue}</DescriptionNumber>
+                <DescriptionNumber
+                  css={css`
+                    @media (max-width: 320px) {
+                      color: ${open ? "#000000" : null};
+                    } ;
+                  `}
+                >
+                  {CallNumberValue}
+                </DescriptionNumber>
                 <ContactIcon src={SpoilerIcon} alt="Spoiler Icon" />
               </ContactItem>
               <ContactItem>
                 <HeaderButton>
-                  <Span>
+                  <Span
+                    css={css`
+                      @media (max-width: 320px) {
+                        color: ${open ? "#000000" : null};
+                      } ;
+                    `}
+                  >
                     {CallValue}
                     <ContactIcon src={CallIcon} alt="Call Icon" />
                   </Span>
@@ -130,6 +156,20 @@ export const Header = () => {
               </ContactItem>
             </ContactList>
           </ContactBlock>
+          <MenuButton
+            onClick={() => {
+              setOpen(!open);
+            }}
+          >
+            <MenuButtonIcon
+              css={css`
+                @media (max-width: 320px) {
+                  filter: ${open ? "invert(0%) brightness(0%)" : null};
+                } ;
+              `}
+              alt="Menu Icon"
+            />
+          </MenuButton>
         </MainTopWrapper>
         <MainBottomWrapper>
           <MenuButtonList>
@@ -163,6 +203,7 @@ export const Header = () => {
           </MenuButtonList>
         </MainBottomWrapper>
       </MainWrapper>
+      {open && <SideMenu />}
     </Container>
   );
 };

@@ -6,6 +6,8 @@ import {
   Description,
   MainContent,
   ButtonWrapper,
+  Br,
+  Br2,
 } from "./main.styled";
 import { MainButton } from "../../components/mainButton/mainButton";
 import { SecondaryButton } from "../../components/secondaryButton/secondaryButton";
@@ -16,8 +18,9 @@ export const Main = () => {
     <Container>
       <MainContent>
         <Title>
-          Профессиональный <TitleSpan>ремонт двигателей</TitleSpan> HYUNDAI и
-          KIA с <TitleSpan>гарантией 1 год</TitleSpan> за 4-7 дней
+          Профессиональный <Br />
+          <TitleSpan>ремонт двигателей</TitleSpan> HYUNDAI и KIA
+          <Br2 /> с <TitleSpan>гарантией 1 год</TitleSpan> за 4-7 дней
         </Title>
         <Description>
           в специализированном автосервисе полного цикла
