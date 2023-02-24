@@ -2,43 +2,65 @@ import styled from "@emotion/styled";
 import { Link } from "react-router-dom";
 
 export const Container = styled.div`
-  max-width: 102.688rem;
+  max-width: 85.573vw;
   margin: 0 auto;
-  padding: 0 1rem;
+  padding: 0 0.833vw;
+  @media (max-width: 992px) {
+    max-width: 53rem;
+    padding: 0 0.5rem;
+  }
 `;
 
 export const MainWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  margin: 1.875rem auto 1.375rem auto;
+  margin: 1.563vw auto 1.146vw auto;
+  @media (max-width: 992px) {
+    margin: 0.938rem auto 0.688rem auto;
+  }
 `;
 
 export const MainTopWrapper = styled.div`
   position: relative;
   display: flex;
-  gap: 3.563rem;
-  margin: 0 0 2.75rem 0;
+  gap: 2.969vw;
+  margin: 0 0 2.292vw 0;
   &::after {
     content: "";
     position: absolute;
-    top: calc(100% + 1.375rem);
+    top: calc(100% + 1.146vw);
     height: 1px;
     background-color: #2a2a2a;
     width: 100%;
+  }
+  @media (max-width: 992px) {
+    gap: 1.813rem;
+    margin: 0 0 0.688rem 0;
+    flex-wrap: wrap;
+    &::after {
+      top: calc(100% + 0.706rem);
+    }
   }
 `;
 
 export const LogoWrapper = styled.div`
   display: flex;
-  gap: 1.438rem;
+  gap: 1.198vw;
+  @media (max-width: 992px) {
+    gap: 0.75rem;
+  }
 `;
 
 export const LogoBlock = styled(Link)``;
 
 export const Icon = styled.img`
-  max-width: 2.188rem;
-  max-height: 2.188rem;
+  max-width: 1.823vw;
+  max-height: 1.823vw;
   align-self: center;
+  @media (max-width: 992px) {
+    max-width: 1.125rem;
+    max-height: 1.125rem;
+  }
 `;
 
 export const DescriptionBlock = styled.p`
@@ -46,30 +68,46 @@ export const DescriptionBlock = styled.p`
   font-family: "Manrope";
   font-style: normal;
   font-weight: 400;
-  font-size: 11px;
-  line-height: 20px;
+  font-size: 0.573vw;
+  line-height: 1.042vw;
   white-space: pre-wrap;
   color: #2a2a2a;
+  @media (max-width: 992px) {
+    font-size: 0.356rem;
+    line-height: 0.625rem;
+  }
 `;
 
 export const PriceCalculatorBlock = styled.div`
   display: flex;
-  gap: 0.686rem;
+  gap: 0.521vw;
+  @media (max-width: 992px) {
+    gap: 0.313rem;
+  }
 `;
 
 export const AddressBlock = styled.div`
   display: flex;
-  gap: 0.686rem;
+  gap: 0.521vw;
+  @media (max-width: 992px) {
+    gap: 0.313rem;
+  }
 `;
 
 export const MapBlock = styled.div`
   display: flex;
-  gap: 0.686rem;
+  gap: 0.521vw;
+  @media (max-width: 992px) {
+    gap: 0.313rem;
+  }
 `;
 
 export const QuestionBlock = styled.div`
   display: flex;
-  gap: 1.125rem;
+  gap: 0.938vw;
+  @media (max-width: 992px) {
+    gap: 0.563rem;
+  }
 `;
 
 export const Description = styled.p`
@@ -77,10 +115,14 @@ export const Description = styled.p`
   font-family: "Manrope";
   font-style: normal;
   font-weight: 700;
-  font-size: 11px;
-  line-height: 15px;
+  font-size: 0.573vw;
+  line-height: 0.781vw;
   white-space: pre-wrap;
   color: #2a2a2a;
+  @media (max-width: 992px) {
+    font-size: 0.356rem;
+    line-height: 0.481rem;
+  }
 `;
 
 export const Span = styled.span`
@@ -88,10 +130,14 @@ export const Span = styled.span`
   font-family: "Manrope";
   font-style: normal;
   font-weight: 700;
-  font-size: 11px;
-  line-height: 15px;
+  font-size: 0.573vw;
+  line-height: 0.781vw;
   white-space: pre-wrap;
   color: #2a2a2a;
+  @media (max-width: 992px) {
+    font-size: 0.356rem;
+    line-height: 0.481rem;
+  }
 `;
 
 export const HeaderButton = styled.button`
@@ -104,8 +150,12 @@ export const HeaderButton = styled.button`
 export const SocialList = styled.ul`
   display: flex;
   list-style: none;
-  gap: 0.373rem;
+  gap: 0.313vw;
   align-self: center;
+  flex-wrap: wrap;
+  @media (max-width: 992px) {
+    gap: 0.194rem;
+  }
 `;
 
 export const SocialItem = styled.li``;
@@ -121,7 +171,10 @@ export const ContactBlock = styled.div`
 export const ContactList = styled.ul`
   display: flex;
   flex-direction: column;
-  gap: 0.375rem;
+  gap: 0.313vw;
+  @media (max-width: 992px) {
+    gap: 0.194rem;
+  }
 `;
 
 export const ContactItem = styled.li`
@@ -132,13 +185,20 @@ export const DescriptionNumber = styled.p`
   font-family: "Manrope";
   font-style: normal;
   font-weight: 700;
-  font-size: 20px;
-  line-height: 10px;
+  font-size: 1.042vw;
+  line-height: 0.521vw;
   color: #2a2a2a;
+  @media (max-width: 992px) {
+    font-size: 0.625rem;
+    line-height: 0.313rem;
+  }
 `;
 
 export const ContactIcon = styled.img`
-  padding: 0 0.5rem;
+  padding: 0 0.417vw;
+  @media (max-width: 992px) {
+    padding: 0 0.25rem;
+  }
 `;
 
 export const MainBottomWrapper = styled.div``;
@@ -156,10 +216,14 @@ export const MenuButtonLink = styled(Link)`
   font-family: "Manrope";
   font-style: normal;
   font-weight: 600;
-  font-size: 12px;
-  line-height: 16px;
+  font-size: 0.625vw;
+  line-height: 0.833vw;
   color: #2a2a2a;
   &:visited {
     color: #2a2a2a;
+  }
+  @media (max-width: 992px) {
+    font-size: 0.388rem;
+    line-height: 0.519rem;
   }
 `;
