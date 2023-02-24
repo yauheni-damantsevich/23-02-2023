@@ -152,7 +152,6 @@ export const SocialList = styled.ul`
   list-style: none;
   gap: 0.313vw;
   align-self: center;
-  flex-wrap: wrap;
   @media (max-width: 992px) {
     gap: 0.194rem;
   }
