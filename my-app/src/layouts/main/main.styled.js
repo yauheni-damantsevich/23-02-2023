@@ -1,7 +1,9 @@
 import styled from "@emotion/styled";
 import BackgroundImage from "../../assets/bg.png";
 
-export const Container = styled.div`
+export const Container = styled.div``;
+
+export const MainContentWrapper = styled.div`
   max-width: 85.573vw;
   margin: 0 auto;
   padding: 0 0.833vw;

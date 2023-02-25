@@ -31,6 +31,7 @@ import {
   MenuButtonLink,
   MenuButton,
   MenuButtonIcon,
+  IFrame,
 } from "./header.styled";
 import LogoIcon from "../../assets/Логотип.svg";
 import MapIcon from "../../assets/Карта.svg";
@@ -57,6 +58,13 @@ export const Header = () => {
   const CallValue = "Заказать звонок";
   const [open, setOpen] = React.useState(false);
   const [openPopup, setOpenPopup] = React.useState(false);
+  const [isHovering, setIsHovering] = React.useState(false);
+  const handleMouseOver = () => {
+    setIsHovering(true);
+  };
+  const handleMouseOut = () => {
+    setIsHovering(false);
+  };
   return (
     <Container>
       <MainWrapper>
@@ -78,7 +86,7 @@ export const Header = () => {
             <Icon src={MapIcon} alt="Map Icon" />
             <Description>{addressDescriptionValue}</Description>
           </AddressBlock>
-          <MapBlock>
+          <MapBlock onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>
             <Icon
               css={css`
                 max-width: 0.75rem;
@@ -207,6 +215,16 @@ export const Header = () => {
       </MainWrapper>
       {open && <SideMenu />}
       {openPopup && <Popup state={setOpenPopup} />}
+      {isHovering && (
+        <IFrame
+          src="https://yandex.ru/map-widget/v1/?um=constructor%3A937c6b7602f12a3723579b68154aa2db3dcdea6a8de0f426537714248cd6d72c&amp;source=constructor"
+          width="500"
+          height="400"
+          frameborder="0"
+          onMouseOver={handleMouseOver}
+          onMouseOut={handleMouseOut}
+        />
+      )}
     </Container>
   );
 };

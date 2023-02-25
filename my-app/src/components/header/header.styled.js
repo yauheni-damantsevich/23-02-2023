@@ -8,8 +8,7 @@ export const Container = styled.div`
   top: 0;
   max-width: 85.573vw;
   margin: 0 auto;
-  padding: 0 0.833vw;
-  overflow-x: hidden;
+  padding: 0 0.833vw 1.146vw 0.833vw;
   background: #ffffff;
   @media (max-width: 992px) {
     max-width: 53rem;
@@ -38,7 +37,7 @@ export const MainTopWrapper = styled.div`
   &::after {
     content: "";
     position: absolute;
-    top: calc(100% + 1.146vw);
+    top: 55%;
     height: 1px;
     background-color: #2a2a2a;
     width: 100%;
@@ -48,7 +47,7 @@ export const MainTopWrapper = styled.div`
     margin: 0 0 0.688rem 0;
     flex-wrap: wrap;
     &::after {
-      top: calc(100% + 0.706rem);
+      top: 85%;
     }
   }
   @media (max-width: 320px) {
@@ -304,4 +303,10 @@ export const MenuButton = styled.button`
 
 export const MenuButtonIcon = styled(MenuIcon)`
   filter: invert(100%) brightness(200%);
+`;
+
+export const IFrame = styled.iframe`
+  position: fixed;
+  top: 0;
+  left: 35%;
 `;
