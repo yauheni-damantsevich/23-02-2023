@@ -6,6 +6,9 @@ export const ScrollBarContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: calc(29.375vw + 1.979vw);
+  @media (max-width: 992px) {
+    display: none;
+  }
 `;
 
 export const Title = styled.p`
