@@ -1,1 +1,4 @@
-# 23-02-2023
+# Landing Page Fluid & Elastic Layout
+
+- React
+- Emotion
